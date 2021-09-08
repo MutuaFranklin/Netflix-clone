@@ -36,7 +36,6 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-svgl(w(g!li(val_@zn*@vuh0@$(w2evgsg&9-_x)6=#50n)u-'
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!

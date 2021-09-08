@@ -51,10 +51,10 @@ def search_movies(request):
 
     if 'search_query' in request.GET and request.GET["search_query"]:
         movie_search = request.GET.get("search_query")
-        print(movie_search)
+        print('capture form',movie_search)
         search = tmdb.Search()
         searched_movies = search.movie(query =movie_search)
-        print(searched_movies)
+        print('movies',searched_movies)
         message = f"{movie_search}"
         context = {
             "message":message,
