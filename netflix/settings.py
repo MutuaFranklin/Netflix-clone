@@ -43,9 +43,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_REDIRECT_URL = 'newsToday'
+LOGIN_REDIRECT_URL = 'home'
 
-LOGOUT_REDIRECT_URL = 'newsToday'
+LOGOUT_REDIRECT_URL = 'home'
 
 
 # Application definition
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'movies',
     'bootstrap5',
+    'registration',
 
 ]
 

@@ -13,6 +13,7 @@ tmdb_url ='https://image.tmdb.org/t/p/w342/'
 
 
 def home(request):
+    current_user = request.user
     popular_movies_tmdb = tmdb.Movies('popular')
     popular_movies = popular_movies_tmdb.info()['results']
     url= tmdb_url
@@ -24,6 +25,7 @@ def home(request):
         'popular':popular_movies, 
         'upcoming':upcoming_movies,
         'url':url,
+        'current_user': current_user
     }
 
     return render(request, 'movies/index.html', context)

@@ -13,23 +13,27 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li> -->
+          {% if user.is_authenticated %}
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Browse
+              {{request.user}}
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <a class="dropdown-item" href="">Create Article</a>
-              </li>
-              <li><a class="dropdown-item" href="">Change Password</a></li>
+    
+              <li><a class="dropdown-item" href="/accounts/password/change">Change Password</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="">Logout</a></li>
+              <li><a class="dropdown-item" href="/accounts/logout">Logout</a></li>
             </ul>
+          </li>
+          {% else %}
             <li>
-              <a class='btn btn-default' href="">Login</a>
+              <a class='btn btn-default' href="/accounts/login">Login</a>
             </li>
+
+          {% endif %}
+
   
           </li>
          

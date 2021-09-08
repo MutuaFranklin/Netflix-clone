@@ -12,6 +12,11 @@ body{
     color: red !important;
 }
 
+.navbar .dropdown ul{
+
+    background-color: black !important;
+}
+
 .movies{
     display: flex;
     flex-direction: column;
