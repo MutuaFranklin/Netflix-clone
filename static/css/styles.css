@@ -1,0 +1,47 @@
+body{
+    background-color: black ;
+    color: white;
+}
+
+.navbar li a{
+    color: white !important;
+}
+
+
+.navbar-brand{
+    color: red !important;
+}
+
+.movies{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+.image-card{
+    transform: scale(1.0);
+    width: 18rem;
+    margin: 3rem;
+}
+.image-card:hover{
+    transform: scale(1.1);
+}
+
+.movieDetails{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}

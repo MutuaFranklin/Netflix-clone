@@ -1,0 +1,22 @@
+{%extends 'movies/base.html'%}
+
+ {% block content %}
+
+ <div class="container-fluid movies">
+    {% if searched_movies%}
+    <h5>Found {{searched_movies|length }} of searched movie {{message}}.</h5>
+  {% else %}
+    <h5> Found 0 images for the search movie {{message}}.</h5>
+  {% endif %}
+     <div class="row">
+        {% for movie in searched_movies %}
+        <a class="image-card" href="/movie/{{movie.id}}" ><img  src="{{url}}/{{movie.poster_path}}"   alt=""  /></a>       
+        
+        {% endfor %}
+     </div>
+
+     
+
+</div>
+
+ {% endblock%}

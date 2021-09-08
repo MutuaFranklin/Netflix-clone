@@ -1,0 +1,32 @@
+{%extends 'movies/base.html'%}
+
+ {% block content %}
+
+ <div class="container-fluid movies">
+    <h5 class="title">popular movies</h5>
+
+     <div class="row">
+        {% for movie in popular %}
+        <a class="image-card" href="/movie/{{movie.id}}" ><img  src="{{url}}/{{movie.poster_path}}"   alt=""  /></a>       
+
+        <!-- <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <img  src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" alt="" />       
+            </div>
+        </div> -->
+        
+        {% endfor %}
+     </div>
+
+     <h5 class="title">Upcoming Movies</h5>
+
+     <div class="row">
+        {% for movie in upcoming %}
+        <a class="image-card" href="movie/{{movie.id}}"><img src="{{url}}/{{movie.poster_path}}" alt="" /></a>
+       
+        {% endfor %}
+     </div>
+
+    </div>
+
+ {% endblock%}
