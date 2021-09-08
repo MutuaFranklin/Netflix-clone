@@ -1,14 +1,14 @@
 from django.shortcuts import render
 import json
 import tmdbsimple as tmdb
-from decouple import config
+from django.conf import settings
 import datetime as dt
 
 
 
+
 # Create your views here.
-# tmdb.tmdb_api = config('TMDB.API_KEY')
-tmdb.API_KEY = 'a39313391038c326a4b959984d2e07d4'
+tmdb.API_KEY = settings.TMDB_API
 tmdb_url ='https://image.tmdb.org/t/p/w342/'
 
 
@@ -31,21 +31,17 @@ def home(request):
     return render(request, 'movies/index.html', context)
 
 def movie_details(request, movie_id):
+    url= tmdb_url
     movies_tmdb = tmdb.Movies(movie_id)
     movies = movies_tmdb.info()
     date_created = movies['release_date']
     date_time = dt.datetime.strptime(date_created, '%Y-%m-%d')
-    # Get movie name and use it to pass it as an argument to the youtube api.
-    movie_name = movies['original_title']
-    # youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=DEVELOPER_KEY)
-    # search_response = youtube.search().list(q=movie_name, part='id,snippet', maxResults=1).execute()
-    # for search_result in search_response.get('items', []):
-    #     if search_result['id']['kind'] == 'youtube#video':
-    #         video_id = search_result['id']['videoId']
+    
 
     context = {
         'movies':movies,
-        'date':date_time
+        'date':date_time,
+        'url':url,
     }
     return render(request, 'movies/movie.html', context)
 
@@ -55,12 +51,14 @@ def search_movies(request):
         movie_search = request.GET.get("search_query")
         print('capture form',movie_search)
         search = tmdb.Search()
-        searched_movies = search.movie(query =movie_search)
+        searched_movies_data = search.movie(query =movie_search)
+        searched_movies = searched_movies_data['results']
         print('movies',searched_movies)
         message = f"{movie_search}"
         context = {
             "message":message,
-            "searched_movie": searched_movies
+            "searched_movie": searched_movies,
+            "title": message,
 
         }
 

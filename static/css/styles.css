@@ -50,3 +50,8 @@ body{
 .absolute{
     position: absolute;
 }
+
+
+.fa-star{
+    color: rgb(204, 176, 16);
+}
