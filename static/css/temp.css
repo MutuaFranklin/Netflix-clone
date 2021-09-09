@@ -1,0 +1,218 @@
+/* Template */
+:root {
+    --primary: #141414;
+    --light: #F3F3F3;
+    --dark: #686868;
+}
+  
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+    color: var(--light);
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+
+    padding: 20px 20px 0 20px;
+    position: fixed;
+    top: 0;
+    display: flex;  
+    grid-gap:5px;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: "nt mn mn sb . . . "; 
+    background-color: var(--primary);
+    width: 100%;
+    margin-bottom: 0px;
+
+}
+  
+.netflixLogo {
+    grid-area: nt;
+    object-fit: cover;
+    width: 100px;
+    max-height: 100%;
+    
+    padding-left: 30px;
+    padding-top: 0px;  
+}
+  
+.netflixLogo img {  
+    height: 35px;     
+}
+  
+#logo {
+    color: #E50914;  
+    margin: 0; 
+    padding: 0; 
+}
+  
+  
+.main-nav {
+    /* grid-area: mn; */
+    padding: 0 30px 0 20px;
+}
+  
+.main-nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin: 5px;  
+}
+  
+.main-nav a:hover {
+    color: var(--dark);
+}
+  
+.sub-nav {
+    grid-area: sb;
+    padding: 0 40px 0 40px;
+}
+  
+.sub-nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin: 5px;
+}
+  
+.sub-nav a:hover {
+    color: var(--dark);
+}
+
+*/
+
+
+/* MAIN CONTAINER */
+/* h1 {
+    color: red;
+    text-align: center;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3,100%);
+    overflow:hidden;
+    scroll-behavior: smooth;
+  } 
+section{
+      width: 100%;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      margin: 20px 0;
+}
+      
+.item {
+    position: relative;
+    padding: 0 2px;
+    transition: duration all;
+}       
+.item:hover { 
+    margin: 0 40px;
+    transform: scale(1.2);
+}
+  
+  
+.heading {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+}
+  
+.duration {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    color: #fff;
+}
+        
+.arrow__btn {
+    position: absolute;
+    color: #fff;
+    text-decoration: none;
+    font-size: 6em;
+    background:rgb(0,0,0);
+    width: 80px;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.left-arrow {
+    top:0; bottom:0; left:0;
+    background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+
+.right-arrow {
+    top:0; bottom:0; right: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+} */
+  
+.main-container {
+    display: flex;
+    /* grid-template-columns: repeat(3,100%);
+    overflow:hidden;
+    scroll-behavior: smooth; */
+    margin-top: 10rem;
+    padding: 30px;
+}
+  
+.box {
+    display: flex;
+    width: 100%;
+    /* grid-gap: 50px; */
+    /* position: relative; */
+    padding: 20px;
+    /* grid-template-columns: repeat(4, auto);  */
+}
+  
+.box a {
+    /* position: relative; */
+    margin: 1px;
+    transition: transform .3s;  
+}
+  
+.box a:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1.4);
+    -webkit-transform: scale(1.4);  
+    transform: scale(1.4);
+}
+  
+.box img {
+    border-radius: 2px;
+}
+  
+.left-arrow {
+    top:0; bottom:0; left:0;
+    background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+
+.right-arrow {
+    top:0; bottom:0; right: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+} 
+.arrow__btn {
+    position: absolute;
+    color: #fff;
+    text-decoration: none;
+    font-size: 6em;
+    background:rgb(0,0,0);
+    width: 80px;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;}
+
+
+
+
+
+
+

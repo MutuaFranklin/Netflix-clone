@@ -1,3 +1,4 @@
+/*Main */
 body{
     background-color: black ;
     color: white;
@@ -5,11 +6,16 @@ body{
 
 .navbar li a{
     color: white !important;
+    margin-left: 10%;
+    font-size: 1rem;
+    font-weight: 800;
 }
 
 
 .navbar-brand{
     color: red !important;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 .navbar .dropdown ul{
@@ -27,6 +33,7 @@ body{
     display: flex;
     justify-content: center;
 }
+
 
 .image-card{
     transform: scale(1.0);

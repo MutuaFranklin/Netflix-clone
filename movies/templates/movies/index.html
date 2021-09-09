@@ -1,33 +1,39 @@
 {%extends 'movies/base.html'%}
 
- {% block content %}
+{% block content %}
 
- <div class="container-fluid movies">
-   <h5 class="title">Trending movies</h5>
-
+<div class="container-fluid movies">
+   <div class="col-md-10">
+      <h5 class="title">Trending movies</h5>
+   </div>
    <div class="row">
+
+
       {% for movie in trending %}
-      <a class="image-card" href="/movie/{{movie.id}}" ><img  src="{{url}}/{{movie.backdrop_path}}"   alt=""  /></a>       
+      <a class="image-card" href="/movie/{{movie.id}}"><img src="{{url}}/{{movie.backdrop_path}}" alt="" /></a>
+      {% endfor %}
+   </div>
+   <div class="col-md-10">
+      <h5 class="title">Popular movies</h5>
+   </div>
+   <div class="row">
+
+      {% for movie in popular %}
+      <a class="image-card" href="/movie/{{movie.movie_id}}"><img src="{{movie.image_path}}" alt="" /></a>
       {% endfor %}
    </div>
 
-   <h5 class="title">Popular movies</h5>
+   <div class="col-md-10">
+      <h5 class="title">Upcoming movies</h5>
+   </div>
+   <div class="row">
 
-     <div class="row">
-        {% for movie in popular %}
-        <a class="image-card" href="/movie/{{movie.movie_id}}" ><img  src="{{movie.image_path}}"   alt=""  /></a>       
-        {% endfor %}
-     </div>
+      {% for movie in upcoming %}
+      <a class="image-card" href="movie/{{movie.movie_id}}"><img src="{{url}}/{{movie.image_path}}" alt="" /></a>
 
-     <h5 class="title">Upcoming Movies</h5>
+      {% endfor %}
+   </div>
 
-     <div class="row">
-        {% for movie in upcoming %}
-        <a class="image-card" href="movie/{{movie.movie_id}}"><img src="{{url}}/{{movie.image_path}}" alt="" /></a>
-       
-        {% endfor %}
-     </div>
+</div>
 
-    </div>
-
- {% endblock%}
+{% endblock%}
