@@ -88,7 +88,7 @@ def create_playlist(request):
                 playlist.user = current_user
                 print(playlist)
                 playlist.save()                
-            return redirect('home')
+            return redirect('playlists')
 
     else:
         form = PlaylistForm()
@@ -104,6 +104,18 @@ def playlists(request):
     context ={
         "playlists":playlists,    
         }
+    return render(request, 'movies/playlists.html', context)
+
+def filter_playlist(request, playlist_name):
+    playlist = Playlist.filter_by_playlist_name(playlist_name)
+    print(playlist)
+    
+    context = {
+        "title" : playlist_name,
+        "header" : playlist_name,
+        'playlist': playlist,
+       
+    }
     return render(request, 'movies/playlists.html', context)
   
 

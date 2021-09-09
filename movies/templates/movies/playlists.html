@@ -7,17 +7,38 @@
 
 
 
-<h5>Playlists</h5>
+<h5 class="header">Playlists</h5>
 
-<div class="col-md-12" id="playlists">
-    {% for playlist in playlists %}
-        <a class="btn btn-outline-danger" id="btn"
-            href="">{{playlist.playlist_name}}</a>
-    {%endfor%}
+<div class="container-fluid" id="playlists">
+    <div class="row">
+        {% for playlist in playlists %}
+            <a class="btn btn-outline-danger" id="btn" href="/playlist/{{playlist.playlist_name}}" >{{playlist.playlist_name}}</a>
+        {%endfor%}
+    </div>
+   
+    <div class="row mt-3">
+        <div class="row">
+            {% if header %}
+            <h5 class="text-center">{{header}} playlist</h5>
+            {% else %}
+            <h5 class="text-center">Playlist</h5>
+            {% endif %} 
+        </div>
+        {% for list in playlist %}
+
+        <div class="row">
+            <a class="image-card" href="/movie/{{movie.movie_id}}" ><img  src="{{movie.image_path}}"   alt=""  /></a>       
+        </div>
+        
+        {% empty %}
+        <div class="row">
+            <h5 class="text-center">No Playlist Item found</h5>
+        </div>
+
+        {%endfor%}
+        
+    </div>
 </div>
-
-    
-
 
 
 

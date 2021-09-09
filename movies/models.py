@@ -30,3 +30,11 @@ class Playlist(models.Model):
     def display_all_playlists(cls):
         return cls.objects.all()
 
+    @classmethod
+    def filter_by_playlist_name(cls, filter_playlist):
+        try:
+            playlist= cls.objects.filter(playlist_name__icontains=filter_playlist)
+            return playlist
+        except Exception:
+            return  "No playlist found in your filter playlist"
+

@@ -58,6 +58,17 @@ body{
 
 #playlists{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: 1%;
+}
+
+
+.header{
+    text-align: center;
+}
+
+#playlists #btn{
+    width: 7rem;
+    margin: 7px;
 }
