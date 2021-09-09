@@ -1,0 +1,28 @@
+{% extends 'movies/base.html'%}
+{% load bootstrap5 %}
+
+
+{% block content%}
+
+
+<div class="container">
+    <h5>Create Playlist</h5>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        
+
+        <button type="submit">Create</button>
+    </form>
+</div>
+
+
+
+
+    
+
+
+
+
+
+{% endblock %}

@@ -3,18 +3,19 @@
  {% block content %}
 
  <div class="container-fluid movies">
-    <h5 class="title">popular movies</h5>
+   <h5 class="title">Trending movies</h5>
+
+   <div class="row">
+      {% for movie in trending %}
+      <a class="image-card" href="/movie/{{movie.id}}" ><img  src="{{url}}/{{movie.backdrop_path}}"   alt=""  /></a>       
+      {% endfor %}
+   </div>
+
+   <h5 class="title">Popular movies</h5>
 
      <div class="row">
         {% for movie in popular %}
-        <a class="image-card" href="/movie/{{movie.id}}" ><img  src="{{url}}/{{movie.poster_path}}"   alt=""  /></a>       
-
-        <!-- <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <img  src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" alt="" />       
-            </div>
-        </div> -->
-        
+        <a class="image-card" href="/movie/{{movie.movie_id}}" ><img  src="{{movie.image_path}}"   alt=""  /></a>       
         {% endfor %}
      </div>
 
@@ -22,7 +23,7 @@
 
      <div class="row">
         {% for movie in upcoming %}
-        <a class="image-card" href="movie/{{movie.id}}"><img src="{{url}}/{{movie.poster_path}}" alt="" /></a>
+        <a class="image-card" href="movie/{{movie.movie_id}}"><img src="{{url}}/{{movie.image_path}}" alt="" /></a>
        
         {% endfor %}
      </div>

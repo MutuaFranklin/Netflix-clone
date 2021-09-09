@@ -1,0 +1,25 @@
+{% extends 'movies/base.html'%}
+{% load bootstrap5 %}
+
+
+{% block content%}
+
+
+
+
+<h5>Playlists</h5>
+
+<div class="col-md-12" id="playlists">
+    {% for playlist in playlists %}
+        <a class="btn btn-outline-danger" id="btn"
+            href="">{{playlist.playlist_name}}</a>
+    {%endfor%}
+</div>
+
+    
+
+
+
+
+
+{% endblock %}
